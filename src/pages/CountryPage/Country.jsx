@@ -4,7 +4,7 @@ import { useContext, useEffect } from "react";
 import { AppContexts } from "../../contexts/AppContexts";
 import "./country.css";
 import "../../components/style.css";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Borders } from "../../components/Borders";
 
 export function Country({ data }) {
@@ -38,7 +38,7 @@ function showCountry(data, theme) {
         <img src={data.flags.svg} alt={data.flags.alt} />
         <div className="detail">
           <h2>{data.name.common}</h2>
-          <div>
+          <div className="detail2">
             <div>
               <p>
                 <span className="bold">Native Name: </span>
@@ -76,12 +76,19 @@ function showCountry(data, theme) {
               </p>
             </div>
           </div>
-          <div>
+          <div className="bordersDiv">
             <div className="bold">Border Countries: </div>
-            <div>
+            <div className="borders">
               {data.borders
                 ? data.borders.map((item, index) => {
-                    return <Borders cca3={item} theme={theme} key={index} />;
+                    return (
+                      <Borders
+                        cca3={item}
+                        theme={theme}
+                        key={index}
+                        allData={data}
+                      />
+                    );
                   })
                 : ""}
             </div>

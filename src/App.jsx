@@ -11,6 +11,10 @@ function App() {
   const [theme, setTheme] = useState("light");
   const [filteredData, setFilteredData] = useState(null);
   const [data, setData] = useState(null);
+
+  const body = document.querySelector("body");
+  theme === "dark" ? (body.id = "dark") : (body.id = "light");
+
   useEffect(() => {
     fetchAPI().then((data) => {
       setData(data);

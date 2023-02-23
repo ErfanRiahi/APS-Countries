@@ -10,9 +10,7 @@
   --white: hsl(0, 0%, 100%); /*Dark Mode Text & Light Mode Elements*/
 }
 
-body,
-html,
-#root {
+body {
   margin: 0;
   height: 100%;
   font-family: "Nunito Sans", sans-serif;
@@ -123,7 +121,6 @@ header {
 .allCountry {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  height: 100%;
 }
 
 #light a {
