@@ -24,7 +24,7 @@ export function Country({ data }) {
 }
 
 function showCountry(data, theme) {
-  document.title = data.name.common;
+  document.title = "All Countries | " + data.name.common;
   return (
     <div id={theme}>
       <button
