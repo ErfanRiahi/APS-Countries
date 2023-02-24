@@ -6,6 +6,7 @@ import "./country.css";
 import "../../components/style.css";
 import { Link, useLocation } from "react-router-dom";
 import { Borders } from "../../components/Borders";
+import { NotFound } from "../NotFoundPage/NotFound";
 
 export function Country({ data }) {
   const { theme, setFilteredData } = useContext(AppContexts);
@@ -13,6 +14,7 @@ export function Country({ data }) {
     setFilteredData(data);
   }, []);
   const location = useLocation();
+  if (location.state === null) return <NotFound />;
   return data ? (
     showCountry(
       data.filter((item) => item.name.common === location.state)[0],

@@ -6,6 +6,7 @@ import "./components/style.css";
 import { AppContexts } from "./contexts/AppContexts";
 import { Country } from "./pages/CountryPage/Country";
 import { fetchAPI } from "./components/API/fetchAPI";
+import { NotFound } from "./pages/NotFoundPage/NotFound";
 
 function App() {
   const [theme, setTheme] = useState("light");
